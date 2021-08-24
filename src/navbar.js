@@ -1,18 +1,23 @@
 import React, { useState } from "react";
+import { Router, Route, Switch } from "react-router";
+import { NavLink } from 'react-router-dom';
+import './index.css';
 
-const Navbar = () => {
+const Navbar = ({user}) => {
   const [show, setShow] = useState(false);
 
   return (
     <>
       <section className="navbar-bg">
-        <nav class="navbar navbar-expand-lg navbar-light ">
-          <div class="container">
-            <a class="navbar-brand" href="#">
-              ThapaPay
+        <nav className="navbar navbar-expand-lg navbar-light ">
+          <div className="container">
+            <div className="logo">
+            <a style={{color:'white',fontSize:18,fontWeight:'bold'}} className="navbar-brand" href="#">
+            RatneshDevelopment
             </a>
+            </div>
             <button
-              class="navbar-toggler"
+              className="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
@@ -20,38 +25,45 @@ const Navbar = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
               onClick={() => setShow(!show)}>
-              <span class="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon"></span>
             </button>
-            <div class={`collapse navbar-collapse ${show ? "show" : ""}`}>
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">
-                    Home
-                  </a>
+            <div className={`collapse navbar-collapse ${show ? "show" : ""}`}>
+              <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+             
+
+                <li className="nav-item">
+                  <NavLink style={{color: 'white'}} exact className="nav-link " aria-current="page" to="/" >Home</NavLink>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    Services
-                  </a>
+                <li className="nav-item">
+                  <NavLink style={{color: 'white'}} className="nav-link" to="/about">About</NavLink>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    About
-                  </a>
+                <li className="nav-item">
+                  <NavLink style={{color: 'white'}} className="nav-link" to="/services">Services</NavLink>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    Contact
-                  </a>
+                <li className="nav-item">
+                  <NavLink style={{color: 'white'}} className="nav-link" to="/contact">Contact</NavLink>
                 </li>
               </ul>
-              <form class="d-flex">
-                <button class="btn  btn-style" type="submit">
-                  Sign Up
-                </button>
-                <button class="btn  btn-style btn-style-border" type="submit">
+
+              <form className="d-flex">
+
+              {
+                  user?
+                  <li className="nav-item">
+                <NavLink  exact className="nav-link " aria-current="page" to="/">Home</NavLink>
+                </li>:
+                <NavLink className="nav-link" to="/Signup"> <button style={{color: 'white'}} class="btn  btn-style" type="submit">
+                 Sign Up
+               </button>
+               </NavLink>
+
+                }
+
+                <NavLink className="nav-link" to="/Login">  <button style={{color: 'white'}} class="btn  btn-style btn-style-border" type="submit">
                   Log in
                 </button>
+                </NavLink>
+
               </form>
             </div>
           </div>
