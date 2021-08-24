@@ -1,4 +1,8 @@
 import React from 'react'
+import z1 from '../src/images/z1.jpg';
+import z2 from '../src/images/z2.jpg';
+import background from '../src/images/background.jpg';
+
 import './index.css'
 import { FontAwesomeIcon, } from '@fortawesome/react-fontawesome'
 import { faAnchor,faEnvelope,faLock,faUser,faCar,faLaptop,faCamera,faMobile} from '@fortawesome/free-solid-svg-icons'
@@ -12,7 +16,7 @@ function Services() {
             <div className="row">
                 <div className="col-md-12">
                     <div className="myhead">
-                    <img src='./images/z1.jpg' width="100%" />
+                    <img src={z1} width="100%" />
                     </div>
                 </div>
 
@@ -63,7 +67,7 @@ function Services() {
                 </div>
                 <div className="col-md-8">
                     <div className="box">
-                        <img style={{ height:900}} src='./images/z2.jpg' />
+                        <img src={z2} />
                         <div className="box-content" style={{ fontSize: 15 }}>
                             <h2 style={{ color: "red", fontWeight: "bold", }}>Er Ratnesh Mishra</h2>
                             <h2 style={{ color: "white", fontWeight: "bold", marginBottom: 20, marginRight: 10 }}>_________________________</h2>
@@ -82,7 +86,7 @@ function Services() {
         <div className='row '>
         <div className='banner'>
         <div className='box'>
-        <img style={{height:400,width:'100%'}}  src='./images/background.jpg' alt="img"/> 
+        <img style={{height:400,width:'100%'}}  src={background} alt="img"/> 
         </div>
         <div className="box-content">
         <h2 className='heading' ><span style={{color:'red',}}>Author Name:</span> Er Rtanesh Mishra</h2>

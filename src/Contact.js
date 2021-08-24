@@ -1,5 +1,6 @@
 import React from 'react'
 import { Form, Col, Row, Button } from 'react-bootstrap';
+import background from '../src/images/background.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
 import { FontAwesomeIcon, } from '@fortawesome/react-fontawesome'
@@ -70,7 +71,7 @@ function Contact() {
         <div className='row '>
         <div className='banner' style={{marginTop:30}}>
         
-        <img style={{height:100,width:'100%',marginTop:30}}  src='./images/background.jpg' alt="img"/> 
+        <img style={{height:100,width:'100%',marginTop:30}}  src={background} alt="img"/> 
         
         <h6 className='heading' ><span style={{color:'white',}}>Author Name:</span> Er Rtanesh Mishra</h6>
         <h6 className='para' ><span style={{color:'white',}}>E-Mail Id:</span> ratneshmishra137@gmail.com</h6>
